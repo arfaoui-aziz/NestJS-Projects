@@ -12,9 +12,19 @@ export class CoffeesController {
     return 'This action returns all coffees Flavors';
   }
 
+  //   @Get(':id')
+  //   findOne(@Param() params) {
+  //     console.log(params);
+  //     return `This action return coffee with ID:  ${params.id} `;
+  //   }
+
   @Get(':id')
-  findOne(@Param() params) {
-    console.log(params);
-    return `This action return coffee with ID:  ${params.id} `;
+  findOne(@Param('id') id: string) {
+    return `This action return coffee with ID:  ${id} `;
+  }
+
+  @Post()
+  create(@Body() body) {
+    return body;
   }
 }
